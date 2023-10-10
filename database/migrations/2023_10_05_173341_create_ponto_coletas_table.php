@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('fone');
             $table->string('endereco');
-            $table->string('documento');
             $table->timestamps();
         });
     }

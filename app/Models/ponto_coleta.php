@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ponto_coleta extends Model
+class Ponto_coleta extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,6 @@ class ponto_coleta extends Model
         'email',
         'fone',
         'endereco',
-        'documento'
     ];
 
     protected $table = 'ponto_coletas';
