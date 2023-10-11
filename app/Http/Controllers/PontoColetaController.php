@@ -21,7 +21,7 @@ class PontoColetaController extends Controller
 
     public function salvar_ponto_coleta(Request $request) {
         $request->validate([
-            'nome'=>'required|regex:/^[\pL\s\-]+$/u|max:50',
+            'nome'=>'required|max:50',
             'email'=>'required|regex:/(.+)@(.+)\.(.+)/i|email|max:50',
             'fone'=>'required|max:11',
             'endereco'=>'required|max:255',
