@@ -44,7 +44,7 @@ Route::get('/todas-doacoes', [DoacaoController::class, 'todas_doacoes'])->name('
 Route::get('/adicionar-doacao', [DoacaoController::class, 'adicionar_doacao'])->name('adicionar.doacao');
 Route::post('/salvar-doacao',[DoacaoController::class,'salvar_doacao'])->name('salvar.doacao');
 Route::get('/editar-doacao/{id}',[DoacaoController::class,'editar_doacao'])->name('editar.doacao');
-Route::post('/atualizar-doacao/{id}',[DoacaoController::class,'atualizar_doacao'])->name('atualizar.ponto.doacao');
+Route::post('/atualizar-doacao/{id}',[DoacaoController::class,'atualizar_doacao'])->name('atualizar.doacao');
 Route::get('/deletar-doacao/{id}',[DoacaoController::class,'deletar_doacao'])->name('deletar.doacao');
 
 require __DIR__.'/auth.php';

@@ -44,7 +44,7 @@ class DoacaoController extends Controller
     public function editar_doacao($id)
     {
         $doacao = Doacao::findOrFail($id);
-        return view('editar_doacao',compact('doacao'));
+        return view('doacao.editar_doacao',compact('doacao'));
     }
 
     public function atualizar_doacao(Request $request,$id)
