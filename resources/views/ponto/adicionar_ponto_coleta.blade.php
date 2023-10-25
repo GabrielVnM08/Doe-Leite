@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <title>Adicionar Posto de Coleta</title>
+        <title>Adicionar Ponto de Coleta</title>
     </head>
     <body>
     <div class="container">
@@ -36,7 +36,7 @@
                         @if(Session::has('message'))
                             <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
                         @endif
-    
+
                         <form action="{{ route('salvar.ponto.coleta') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
@@ -56,7 +56,7 @@
                                     <div class="mb-3">
                                         <label class="mb-1">Endereço</label>
                                         <input type="text" name="endereco" class="form-control" value="{{ old('endereco') }}">
-                                    </div>                              
+                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
