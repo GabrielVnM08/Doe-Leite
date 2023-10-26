@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .bg {
     width: 300px;
     height: 500px;
@@ -38,3 +39,4 @@
     
     color: black;
 }
+
