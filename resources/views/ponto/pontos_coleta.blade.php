@@ -19,15 +19,15 @@
                         <div class="title" style="float:left;">
                             <h2>Pontos de coleta</h2>
                         </div>
-                        <div class="add-button" style="float:right;">
-                            <a class="btn btn-dark" href="{{ route('adicionar.ponto.coleta') }}">Adicionar Ponto de coleta</a>
+                        <div class="add-button" style="float:right;" >
+                            <a class=" btn btn-dark " href="{{ route('adicionar.ponto.coleta') }}" >Adicionar Ponto de coleta</a>
                         </div>
                     </div>
                     <div class="card-body">
                         @if(Session::has('message'))
                             <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
                         @endif
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" style="color: purple; border: 3px solid purple;">
                            <thead>
                             <tr>
                                 <th>Nome</th>
@@ -40,7 +40,7 @@
                            <tbody>
                             @foreach($pontos_coleta as $key=>$ponto_coleta)
                             <tr>
-                                <td>
+                                <td class="text-purple">
                                      {{ $ponto_coleta->nome }}<br>
                                 </td>
                                 <td>
@@ -52,10 +52,10 @@
                                 <td>
                                      {{$ponto_coleta->endereco}}
                                 </td>
-                                <td>
-                                    <a class="btn btn-success btn-sm" href="{{ route('editar.ponto.coleta',$ponto_coleta->id) }}">Editar</a>
-                                    <a class="btn btn-danger btn-sm" onclick="return confirm('Esta certo que quer deletar o Ponto de coleta?')" href="{{ route('deletar.ponto.coleta',$ponto_coleta->id) }}">Deletar</a>
-                                </td>
+                               
+            <a class="btn btn-success btn-sm" href="{{ route('editar.ponto.coleta', $ponto_coleta->id) }}">Editar</a>
+            <a class="btn btn-danger btn-sm" onclick="return confirm('Esta certo que quer deletar o Ponto de coleta?')" href="{{ route('deletar.ponto.coleta', $ponto_coleta->id) }}">Deletar</a>
+        </td>
                             </tr>
                             @endforeach
                            </tbody>
