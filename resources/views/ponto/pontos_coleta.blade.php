@@ -17,49 +17,51 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="title" style="float:left;">
-                            <h2>Pontos de coleta</h2>
+                          
                         </div>
-                        <div class="add-button" style="float:right;" >
-                            <a class=" btn btn-dark " href="{{ route('adicionar.ponto.coleta') }}" >Adicionar Ponto de coleta</a>
-                        </div>
+                        <div class="add-button" style="float:right;">
+                        <div class="add-button" style="float:right;">
+    <a class="btn btn-dark" style="background-color: black; border-color: purple;" href="{{ route('adicionar.ponto.coleta') }}" >Adicionar Ponto de coleta</a>
+</div>
+
+
+
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: #DA70D6;">
                         @if(Session::has('message'))
                             <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
                         @endif
-                        <table class="table table-bordered" style="color: purple; border: 3px solid purple;">
-                           <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Email</th>
-                                <th>Telefone</th>
-                                <th>Endereço</th>
-                                <th>Ação</th>
-                            </tr>
-                           </thead>
-                           <tbody>
-                            @foreach($pontos_coleta as $key=>$ponto_coleta)
-                            <tr>
-                                <td class="text-purple">
-                                     {{ $ponto_coleta->nome }}<br>
-                                </td>
-                                <td>
-                                     {{$ponto_coleta->email}}
-                                </td>
-                                <td>
-                                     {{$ponto_coleta->fone}}
-                                </td>
-                                <td>
-                                     {{$ponto_coleta->endereco}}
-                                </td>
-                               
-            <a class="btn btn-success btn-sm" href="{{ route('editar.ponto.coleta', $ponto_coleta->id) }}">Editar</a>
-            <a class="btn btn-danger btn-sm" onclick="return confirm('Esta certo que quer deletar o Ponto de coleta?')" href="{{ route('deletar.ponto.coleta', $ponto_coleta->id) }}">Deletar</a>
-        </td>
-                            </tr>
-                            @endforeach
-                           </tbody>
-                        </table>
+    
+                        <table class="table table-bordered " >
+            <thead >
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($pontos_coleta as $ponto_coleta)
+                <tr>
+                    <td>{{ $ponto_coleta->nome }}</td>
+                    <td>{{ $ponto_coleta->email }}</td>
+                    <td>{{ $ponto_coleta->fone }}</td>
+                    <td>{{ $ponto_coleta->endereco }}</td>
+                    <td>
+                        <a class="btn btn-success btn-sm" href="{{ route('editar.ponto.coleta', $ponto_coleta->id) }}">Editar</a>
+                        <a class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este Ponto de Coleta?')" href="{{ route('deletar.ponto.coleta', $ponto_coleta->id) }}">Deletar</a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+                          
                     </div>
                     <div class="card-footer">
                         {!! $pontos_coleta->links() !!}

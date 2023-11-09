@@ -20,7 +20,7 @@
                             <h2 class="text-left">Adicionar Posto de coleta</h2>
                         </div>
                         <div class="add-button" style="float:right;">
-                            <a class="btn btn-dark" href="{{ route('pontos.coleta') }}">Todos Pontos de Coleta</a>
+                            <a class="btn btn-dark" style="background-color: purple; border-color: purple;"href="{{ route('pontos.coleta') }}">Todos Pontos de Coleta</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -39,26 +39,26 @@
 
                         <form action="{{ route('salvar.ponto.coleta') }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="row">
+                            <div class="row" >
                                 <div class="col-md-5">
                                     <div class="mb-3">
-                                        <label class="mb-1">Nome</label>
-                                        <input type="text" name="nome" class="form-control" value="{{ old('nome') }}">
+                                        <label class="mb-1" style="color: purple;">Nome</label>
+                                        <input type="text" name="nome" class="form-control" value="{{ old('nome') }}" class="purple-800">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="mb-1">Email</label>
+                                        <label class="mb-1" style="color: purple;">Email</label>
                                         <input type="email" name="email" class="form-control" value="{{ old('email') }}">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="mb-1">Telefone</label>
+                                        <label class="mb-1" style="color: purple;">Telefone</label>
                                         <input type="tel" name="fone" maxlength="11" class="form-control" value="{{ old('fone') }}">
                                     </div>
                                     <div class="mb-3">
-                                        <label class="mb-1">Endereço</label>
+                                        <label class="mb-1" style="color: purple;">Endereço</label>
                                         <input type="text" name="endereco" class="form-control" value="{{ old('endereco') }}">
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" style="background-color: purple; border-color: purple;">Adicionar</button>
                             </div>
                         </form>
                     </div>

@@ -20,7 +20,7 @@
                             <h2 class="text-left">Adicionar Doação</h2>
                         </div>
                         <div class="add-button" style="float:right;">
-                            <a class="btn btn-dark" href="{{ route('todas.doacoes') }}">Todas Doações</a>
+                            <a class="btn btn-dark" style="background-color: purple; border-color: purple;" href="{{ route('todas.doacoes') }}">Todas Doações</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -37,27 +37,26 @@
                             <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
                         @endif
     
-                        <form action="{{ route('salvar.doacao') }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="mb-3">
-                                        <label class="mb-1">Data</label>
-                                        <input type="date" name="data_doacao" class="form-control" value="{{ old('data_doacao') }}">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="mb-1">Nome</label>
-                                        <input type="text" name="nome_doadora" class="form-control" value="{{ old('nome_doadora') }}">
-                                    </div>  
-                                    <div class="mb-3">
-                                        <label class="mb-1">Quantidade</label>
-                                        <input type="number" name="quantidade" class="form-control" value="{{ old('quantidade') }}">
-                                    </div>                        
-                                </div>
-                                <button type="submit" class="btn btn-primary">Salvar</button>
-                            </div>
-                        </form>
+                        <div class="row">
+            <div class="col-md-5">
+                <form action="{{ route('salvar.doacao') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label class="mb-1">Data</label>
+                        <input type="date" name="data_doacao" class="form-control" value="{{ old('data_doacao') }}">
                     </div>
+                    <div class="mb-3">
+                        <label class="mb-1">Nome</label>
+                        <input type="text" name="nome_doadora" class="form-control" value="{{ old('nome_doadora') }}">
+                    </div>
+                    <div class="mb-3">
+                        <label class="mb-1">Quantidade</label>
+                        <input type="number" name="quantidade" class="form-control" value="{{ old('quantidade') }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: purple; border-color: purple;">Salvar</button>
+                </form>
+            </div>
+        </div>
                 </div>
             </div>
         </div>

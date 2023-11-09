@@ -15,28 +15,28 @@
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="background-color: #DA70D6;">
                         <div class="title" style="float:left;">
-                            <h2>Todas Doações</h2>
+                          
                         </div>
                         <div class="add-button" style="float:right;">
                             <a class="btn btn-dark" href="{{ route('adicionar.doacao') }}">Adicionar Doações</a>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: #DA70D6;">
                         @if(Session::has('message'))
                             <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
                         @endif
-                        <table class="table table-bordered">
-                           <thead>
-                            <tr>
-                                <th>Data</th>
-                                <th>Nome da Doadora</th>
-                                <th>Quantidade</th>
-                                <th>Ações</th>
-                            </tr>
-                           </thead>
-                           <tbody>
+                        <div class="table-responsive">
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Nome da Doadora</th>
+                <th>Quantidade</th>
+                <th>Ações</th>
+            </tr>
+                          
                             @foreach($todas_doacoes as $key=>$doacao)
                             <tr>
                                 <td>{{ \Carbon\Carbon::parse($doacao->data)->format('d-m-Y') }}</td>

@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-red-300 border-b border-gray-100 h-40">
+<nav x-data="{ open: false }" class="bg-pink-400 border-b border-gray-100 h-40">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between">
@@ -13,17 +13,18 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Home') }}
-                    </x-nav-link>
-                </div>
+    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-white">
+        {{ __('Home') }}
+    </x-nav-link>
+</div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('pontos.coleta')" :active="request()->routeIs('pontos.coleta')">
+                    <x-nav-link :href="route('pontos.coleta')" :active="request()->routeIs('pontos.coleta')" class="text-white">
                         {{ __('Pontos de Coleta') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('todas.doacoes')" :active="request()->routeIs('todas.doacoes')">
+                    <x-nav-link :href="route('todas.doacoes')" :active="request()->routeIs('todas.doacoes')" class="text-white">
                         {{ __('Doações') }}
                     </x-nav-link>
                 </div>
@@ -33,7 +34,7 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-red-900 text-sm leading-4 font-medium rounded-md text-red-500 bg-red-300 hover:text-red-700 focus:outline-none transition ease-in-out duration-150">
+                    <button class="inline-flex items-center px-3 py-2  backgroud-color:8B008B; text-white text-sm leading-4 font-medium rounded-md bg-purple-900 hover:text-purple hover:bg-purple focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ml-1">
@@ -46,7 +47,7 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Perfil') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -56,7 +57,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Sair') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -84,9 +85,9 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
+        <div class="pt-4 pb-1 border-t border-purple-900">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-base text-gray-800">{{ Auth::user()->nome }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
 
